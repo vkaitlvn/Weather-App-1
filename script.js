@@ -21,7 +21,7 @@ let weather = {
         displayWeather: function (data) {
           const { name } = data;
           const { icon, description } = data.weather[0];
-          const { temp, humidity, feels_like, temp_min, temp_max } = data.main;
+          const { temp, humidity, feels_like, temp_min, temp_max, pressure } = data.main;
           const { speed } = data.wind;
         
           document.querySelector(".city").innerText = "Weather in " + name;
@@ -37,6 +37,7 @@ let weather = {
             "Feels Like: " + feels_like + "°F";
           document.querySelector(".wind").innerText =
             "Wind speed: " + speed + " m/h";
+          document.querySelector(".pressure").innerText = "Pressure: " + pressure + " Pa";
           
           
           document.querySelector(".weather").classList.remove("loading");
